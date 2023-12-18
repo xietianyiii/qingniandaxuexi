@@ -19,7 +19,9 @@
                             </el-icon>
                             <span>{{ item.title }}</span>
                         </template>
+                        
                         <template v-for="subItem in item.subs">
+                            
                             <el-sub-menu
                                 v-if="subItem.subs"
                                 :index="subItem.index"
@@ -55,7 +57,15 @@ import { computed } from 'vue';
 import { useSidebarStore } from '../store/sidebar';
 import { useRoute } from 'vue-router';
 
-const items = [
+interface MenuItem {
+    icon?: string | undefined; 
+    index: string;
+    title: string;
+    permiss: string;
+    subs?: MenuItem[] | undefined; // Making subs optional
+}
+
+const items: MenuItem[] = [
     {
         icon: 'Odometer',
         index: '/dashboard',
@@ -107,30 +117,8 @@ const items = [
                 title: '文件上传',
                 permiss: '6',
             },
-            {
-                index: '4',
-                title: '三级菜单',
-                permiss: '7',
-                subs: [
-                    {
-                        index: '/editor',
-                        title: '富文本编辑器',
-                        permiss: '8',
-                    },
-                    {
-                        index: '/markdown',
-                        title: 'markdown编辑器',
-                        permiss: '9',
-                    },
-                ],
-            },
+            
         ],
-    },
-    {
-        icon: 'Setting',
-        index: '/icon',
-        title: '自定义图标',
-        permiss: '10',
     },
     {
         icon: 'PieChart',
@@ -143,12 +131,6 @@ const items = [
         index: '/permission',
         title: '权限管理',
         permiss: '13',
-    },
-    {
-        icon: 'CoffeeCup',
-        index: '/donate',
-        title: '支持作者',
-        permiss: '14',
     },
 ];
 

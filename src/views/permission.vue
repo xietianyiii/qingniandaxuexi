@@ -70,20 +70,7 @@ const data: Tree[] = [
 				id: '6',
 				label: '文件上传'
 			},
-			{
-				id: '7',
-				label: '三级菜单',
-				children: [
-					{
-						id: '8',
-						label: '富文本编辑器'
-					},
-					{
-						id: '9',
-						label: 'markdown编辑器'
-					}
-				]
-			}
+			
 		]
 	},
 	{
@@ -99,10 +86,6 @@ const data: Tree[] = [
 		id: '13',
 		label: '权限管理'
 	},
-	{
-		id: '14',
-		label: '支持作者'
-	}
 ];
 
 const permiss = usePermissStore();

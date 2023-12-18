@@ -6,33 +6,34 @@
 					<div class="user-info">
 						<el-avatar :size="120" :src="imgurl" />
 						<div class="user-info-cont">
-							<div class="user-info-name">{{ name }}</div>
+							<div class="user-info-name">团支书</div>
 							<div>{{ role }}</div>
 						</div>
 					</div>
 					<div class="user-info-list">
 						上次登录时间：
-						<span>2022-10-01</span>
+						<span>2023-12-14</span>
 					</div>
 					<div class="user-info-list">
 						上次登录地点：
-						<span>东莞</span>
+						<span>上海</span>
 					</div>
 				</el-card>
 				<el-card shadow="hover" style="height: 252px">
 					<template #header>
 						<div class="clearfix">
-							<span>语言详情</span>
+							<span>班级任务完成详情</span>
 						</div>
 					</template>
-					Vue
+					青年大学习1班
 					<el-progress :percentage="79.4" color="#42b983"></el-progress>
-					TypeScript
-					<el-progress :percentage="14" color="#f1e05a"></el-progress>
-					CSS
-					<el-progress :percentage="5.6"></el-progress>
-					HTML
+					青年大学习2班
+					<el-progress :percentage="14" color="#3b5998"></el-progress>
+					青年大学习3班
+					<el-progress :percentage="5.6" color="#ff9900"></el-progress>
+					青年大学习4班
 					<el-progress :percentage="1" color="#f56c6c"></el-progress>
+
 				</el-card>
 			</el-col>
 			<el-col :span="16">
@@ -43,7 +44,7 @@
 								<el-icon class="grid-con-icon"><User /></el-icon>
 								<div class="grid-cont-right">
 									<div class="grid-num">1234</div>
-									<div>用户访问量</div>
+									<div>完成人数</div>
 								</div>
 							</div>
 						</el-card>
@@ -65,7 +66,7 @@
 								<el-icon class="grid-con-icon"><Goods /></el-icon>
 								<div class="grid-cont-right">
 									<div class="grid-num">5000</div>
-									<div>商品数量</div>
+									<div>未完成人数</div>
 								</div>
 							</div>
 						</el-card>
@@ -127,69 +128,77 @@ const role: string = name === 'admin' ? '超级管理员' : '普通用户';
 const options = {
 	type: 'bar',
 	title: {
-		text: '最近一周各品类销售图'
+		text: '最近一周各班青年大学习完成情况'
 	},
 	xRorate: 25,
 	labels: ['周一', '周二', '周三', '周四', '周五'],
 	datasets: [
 		{
-			label: '家电',
+			label: '一班',
 			data: [234, 278, 270, 190, 230]
 		},
 		{
-			label: '百货',
+			label: '二班',
 			data: [164, 178, 190, 135, 160]
 		},
 		{
-			label: '食品',
+			label: '三班',
 			data: [144, 198, 150, 235, 120]
+		},
+		{
+			label: '四班',
+			data: [122, 101, 15, 25, 12]
 		}
 	]
 };
 const options2 = {
 	type: 'line',
 	title: {
-		text: '最近几个月各品类销售趋势图'
+		text: '最近几个月各班青年大学习完成趋势图'
 	},
 	labels: ['6月', '7月', '8月', '9月', '10月'],
 	datasets: [
-		{
-			label: '家电',
+	{
+			label: '一班',
 			data: [234, 278, 270, 190, 230]
 		},
 		{
-			label: '百货',
-			data: [164, 178, 150, 135, 160]
+			label: '二班',
+			data: [164, 178, 190, 135, 160]
 		},
 		{
-			label: '食品',
-			data: [74, 118, 200, 235, 90]
+			label: '三班',
+			data: [144, 198, 150, 235, 120]
+		},
+		{
+			label: '四班',
+			data: [122, 101, 15, 25, 12]
 		}
 	]
 };
 const todoList = reactive([
 	{
-		title: '今天要修复100个bug',
+		title: '青年大学习',
 		status: false
 	},
 	{
-		title: '今天要修复100个bug',
+		title: '青年大学习',
 		status: false
 	},
 	{
-		title: '今天要写100行代码加几个bug吧',
+		title: '青年大学习',
 		status: false
 	},
 	{
-		title: '今天要修复100个bug',
+		title: '青年大学习',
 		status: false
 	},
 	{
-		title: '今天要修复100个bug',
+		title: '青年大学习',
 		status: true
 	},
 	{
-		title: '今天要写100行代码加几个bug吧',
+		title: '青年大学习',
 		status: true
 	}
 ]);
